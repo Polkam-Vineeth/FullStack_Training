@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo">Sample content</p>
+    <p class="myclass">Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p class="myclass">Paragraph 3</p>
+    <script>
+      const ele = document.getElementById("demo");
+      console.log(ele); // single object
+      const allParas = document.getElementsByTagName("p");
+      console.log(allParas); // array of objects
+      const classParas = document.getElementsByClassName("myclass");
+      console.log(classParas); // array of objects
+      // single object : querySelector
+      // array of objects : querySelectorAll
+      const queryById = document.querySelector("#demo");
+      console.log(queryById); // single object
+      const queryByClass = document.querySelector(".myclass");
+      console.log(queryByClass); // single object
+      const queryByTag = document.querySelector("p");
+      console.log(queryByTag); // single object
+    </script>
+  </body>
+</html>

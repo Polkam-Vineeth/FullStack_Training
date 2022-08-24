@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Functions in JS</h1>
+<h2>every function in JS is a return type function by default</h2>
+<script>
+    // function fun_name() : named function
+    
+    //console.log("Named Functions: func funcName");
+      function demo() {
+        console.log("Named function");
+      }
+      console.log(demo());
+
+
+      // function() : unnamed/anonymous/expression function
+      const test = function () {
+        console.log("Anonymous function");
+        return 10;
+      };
+      console.log(test());
+
+      //Arrow functions print
+        var s = ()=> console.log("ArrowDemo");
+        s();
+
+      //Arrow functions return type
+        var v = ()=> 55;
+        console.log(v());
+
+
+        //Default arguments
+        function vinee(a,b =0 ){
+            console.log("a : ",a, "b :", b);
+        }
+        vinee(55);
+        //Rest arguments
+        function vin(a,b, ...c){
+            console.log("a : ",a, "b :", b,"c :", c);
+        }
+        vin(1,2,3,4,5,6,7,"sree", true);
+
+
+    // const user = {
+    //     name: "mike",
+    //     age: 12,
+    //     greeting: function () {
+    //         console.log("Outside", this);
+    //         setTimeout( () =>{ console.log("Inside", this);console.log("hello from", this.name);}, 1000);
+    //     },
+    // };
+
+    // //flow: sync->async
+    // //greeting is sync but setTimeout is async, john is printed twice.
+    // user.greeting();
+    // user.name = "johnn";
+    // user.greeting();
+
+
+    const arr=[1,2,3,455,40,55, "", null, undefined]
+
+    //map
+    const sqr = arr.map((val,idx, ar)=>{
+        // console.log(val,idx,ar);
+        if(val%2===0) return val*val;
+    })
+    const newsqr = sqr.filter((val) => {
+        // return boolean
+        return val !== undefined;
+    });
+
+    console.log("Array:", arr);
+    console.log("Sqr array:", sqr);
+
+    //filter
+    const evenNos = arr.filter((val) => {
+        // return boolean
+        return val%2 === 0;
+      });
+    console.log("Even array:", evenNos);
+
+    const even = arr
+        .filter((val) => {
+          return val % 2 === 0;
+        })
+        .map((v) => {
+          return v * v;
+        });
+      console.log("Even sqr: ",even);
+</script>
+</body>
+</html>

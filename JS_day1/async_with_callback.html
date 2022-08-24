@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      function asyncWithCallback(callback1, callback2) {
+        setTimeout(function () {
+          callback1();
+        }, 2000);
+        setTimeout(function () {
+          callback2();
+        }, 4000);
+      }
+
+      asyncWithCallback(
+        function () {
+          console.log("callback 1");
+        },
+        function () {
+          console.log("callback 2");
+        }
+      );
+
+    </script>
+  </body>
+</html>

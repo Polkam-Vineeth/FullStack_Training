@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+        //one which comes 1st execute 1st
+      function asyncWithPromise() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            resolve();
+          }, 2000);
+          setTimeout(function () {
+            reject();
+          }, 1000);
+        });
+      }
+
+      asyncWithPromise()
+        .then(function () {
+          console.log("PROMISE RESOLVED");
+        })
+        .catch(function () {
+          console.log("PROMISE REJECTED");
+        });
+    </script>
+  </body>
+</html>

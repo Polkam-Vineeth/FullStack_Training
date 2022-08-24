@@ -1,0 +1,28 @@
+
+<!-- //One way binding -->
+
+<!-- 1. String Interpolation  -->
+<p>Hey {{comptitle.toUpperCase()}} compone works!</p>
+<p>{{5+5}}</p>
+
+<!-- //2. Property Binding [] -->
+<!-- <p>
+    <input type="text" value="comptitle" />
+  </p> -->
+  <p>
+    <input type="text" [value]="comptitle" />
+  </p>
+
+  <p>
+    <input type="text" value={{comptitle}} />
+  </p>
+
+  <!-- 3.Event Binding -->
+
+  <button (click) = "showAlert()">show</button>
+
+
+  <!-- Two way Binding -->
+
+  <input type="text" [(ngModel)]='comptitle'/>
+

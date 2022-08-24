@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .btn-sm {
+            padding: 5px 10px;
+        }
+
+        .btn-md {
+            padding: 10px 20px;
+        }
+
+        .btn-lg {
+            padding: 15px 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select onchange="addClass()">
+        <option value="btn-sm">Small</option>
+        <option value="btn-md">Medium</option>
+        <option value="btn-lg">Large</option>
+    </select>
+
+    <input type="color" onchange="addStyle()" />
+
+    <button >Test Button</button>
+
+    <p id="p">Hey there!</p>
+    <button onclick="colorElementRed()">Color change</button>
+    <script>
+
+        function colorElementRed() {
+            var el = document.getElementById("p");
+            el.style.color = "red";
+        }
+
+        const btn = document.querySelector("button");
+        function addClass() {
+            event.preventDefault();
+            btn.className = event.target.value;
+        }
+        function addStyle() {
+            event.preventDefault();
+            btn.style.backgroundColor = event.target.value;
+        }
+    </script>
+</body>
+
+</html>

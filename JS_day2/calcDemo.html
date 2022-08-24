@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Event target</h1>
+
+    <input type="text"/>
+    <button onclick="displayValue(1)">1</button>
+    <button onclick="displayValue(this)">2</button>
+    <button onclick="displayValue()">3</button>
+    <button onclick="displayValue()">4</button>
+    <button onclick="displayValue()">5</button>
+    <button onclick="displayValue()">6</button>
+    <button onclick="displayValue()">7</button>
+    <button onclick="displayValue()">8</button>
+    <button onclick="displayValue()">9</button>
+    <button onclick="displayValue()">0</button>
+    <script>
+    //when argument is known and passed
+    //   function displayValue(data) { 
+    //     const textbox = document.querySelector("input");
+    //     console.log(data, data.innerText);
+    //   }
+
+
+    //Event target
+      function displayValue() {
+        // using event object
+        console.log(event, event.target);
+        const textbox = document.querySelector("input");
+        textbox.value += event.target.innerText; // data, data.innerText;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>some content</p>
+    <button onclick="changeContent()">change content</button>
+    <script>
+
+        //Render blocking
+      function changeContent() {
+        alert("UI BLOCKAGE"); //sync
+        document.querySelector("p").innerText = "updated content"; // rendering
+      }
+    </script>
+  </body>
+</html>

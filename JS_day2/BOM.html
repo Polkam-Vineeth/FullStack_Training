@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="newWindow()">New Window</button>
+    <button onclick="sameWindow()">Same Window</button>
+    <button onclick="reload()">Reload</button>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goForward()">Forward</button>
+    <script>
+      function newWindow() {
+        window.open("https://www.google.com");
+      }
+      function sameWindow() {
+        location.assign("https://www.google.com");
+      }
+      function reload() {
+        location.reload();
+      }
+      function goBack() {
+        history.back();
+      }
+      function goForward() {
+        history.forward();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<p>product-detail works!</p>
+
+<p>product-list!</p>
+<i>start</i>
+<hr>
+<div *ngFor="let item of plist">
+    <app-product [currencyCode]="selectedCurrency" [data]="item" (btnClick)="addItem($event)"></app-product>
+</div>
+
+<hr>
+<i>end</i>

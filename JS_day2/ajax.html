@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <section></section>
+    <script>
+      fetch("https://fakestoreapi.com/products")
+        .then((response) => {
+          // console.log("RESPONSE", response);
+          return response.json();
+        })
+        .then((data) => {
+          // console.log("DATA", data);
+          displayData(data);
+        })
+        .catch((error) => {
+          console.log("ERROR", error);
+          document.querySelector("section").innerText = "No data found";
+        });
+        
+      function displayData(data) {
+        const section = document.querySelector("section");
+        for (let prod of data) {
+          let tag = "<div>";
+          tag += '<img src="' + prod.image + '"/>';
+          tag += "<h3>" + prod.title + "</h3>";
+          tag += "<h5>" + prod.price + "</h5>";
+          tag += "</div>";
+          section.innerHTML += tag;
+        }
+      }
+    </script>
+  </body>
+</html>

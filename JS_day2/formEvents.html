@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="validate()" onreset="testEvent()">
+      <input type="text" placeholder="Name" id="txtname" onblur="testEvent()" />
+      <input type="text" placeholder="Age" id="txtage" onblur="testEvent()"/>
+      <input type="text" placeholder="Email" onchange="testEvent()" onselect="testEvent()"/>
+      <button type="submit">Submit</button>
+      <button type="reset">Cancel</button>
+      
+      <script>
+        function testEvent() {
+          console.log("Event", event, event.type);
+        }
+        //generally when smtg is submitted, the page reloads and validates
+        //To prevent the reloading of whole page, we use event.preventDefault() to prevent few default actions.
+
+        function validate() {
+          event.preventDefault();
+          const user = {
+            name: document.getElementById("txtname").value,
+            age: document.getElementById("txtage").value,
+          };
+          // form validation
+          if (user.name === "" || user.age === "") {
+            console.log("validation message: Can not be empty");
+          } else {
+            // submit data to server
+            console.log("form submission successful");
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>
+
+

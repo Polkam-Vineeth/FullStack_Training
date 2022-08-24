@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Keypress" onkeypress="restrictToNumbers()" maxlength="5"/>
+    <input type="text" placeholder="Keyup" onkeyup="restrictToNumbers()" maxlength="10"/>
+    <input type="text" placeholder="Keydown" onkeydown="restrictToNumbers()" maxlength="5"/>
+    <script>
+      function testEvent() {
+        console.log("Event", event.type);
+      }
+
+      function changeCase() {
+        event.target.value = event.target.value.toUpperCase();
+      }
+
+
+      function restrictToNumbers() {
+        if (event.keyCode < 48 || event.keyCode > 57) {
+          // non-numerics
+          event.preventDefault(); // used to cancel the default behavior of any event
+        }
+      }
+    </script>
+  </body>
+</html>
