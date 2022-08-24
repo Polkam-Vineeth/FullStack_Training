@@ -1,0 +1,33 @@
+package com.dbs.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.dbs.model.Sender;
+import com.dbs.service.SenderService;
+
+
+@RestController
+public class SenderAccountController {
+
+    @Autowired
+    SenderService senderService;
+
+    @GetMapping("/allBankAccounts")
+    public List<Sender> getAllBankAccounts(){
+
+        return senderService.getAllSenderAccounts();
+    }
+
+    @PostMapping("/addAccount")
+    public void addAccount(@RequestBody Sender bankAccount) {
+    	senderService.addAccount(bankAccount);
+    }
+
+}
+
+

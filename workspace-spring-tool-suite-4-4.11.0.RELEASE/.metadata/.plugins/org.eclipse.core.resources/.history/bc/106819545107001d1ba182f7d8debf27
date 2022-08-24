@@ -1,0 +1,8 @@
+package com.dbs.springcourse;
+
+public class BusinessLogic {
+	
+	public void blogic() {
+		System.out.println("Business Logic!");
+	}
+}

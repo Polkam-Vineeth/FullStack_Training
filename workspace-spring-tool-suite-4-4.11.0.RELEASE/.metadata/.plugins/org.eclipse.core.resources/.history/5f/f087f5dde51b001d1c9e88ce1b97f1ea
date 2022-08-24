@@ -1,0 +1,28 @@
+package com.dbs.payment.services;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dbs.payment.entities.BankBIC;
+import com.dbs.payment.entities.Customer;
+import com.dbs.payment.repository.BankRepository;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    BankRepository bankRepo;
+    
+    public void addAccount(Customer customer) {
+        bankRepo.save(customer);
+    }
+
+    public List<BankBIC> getAllBankAccounts(){
+
+        return bankRepo.findAll();
+    }
+
+}

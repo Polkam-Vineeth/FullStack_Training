@@ -1,0 +1,5 @@
+package com.dbs.sec.model;
+
+public class MyUserDetails {
+
+}
